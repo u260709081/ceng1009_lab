@@ -11,6 +11,11 @@ bars = [48, 117, 200, 240, 160, 260, 220]
 
 BAR_WIDTH = 30
 
+def chooseColor(height: int):
+    if height >= 200: return 'red'
+    elif height >= 100: return 'yellow'
+    else: return 'green'
+
 def drawBar(t: turtle.Turtle, height: int):
     t.left(90)
 
@@ -27,12 +32,7 @@ def drawBar(t: turtle.Turtle, height: int):
     t.right(90)
     t.forward(height)
 
-    if height >= 200:
-        t.color("red")
-    elif height >= 100:
-        t.color("yellow")
-    else:
-        t.color("green")
+    t.color(chooseColor(height))
     t.end_fill()
     t.left(90)
 

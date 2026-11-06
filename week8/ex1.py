@@ -5,7 +5,8 @@ def get_grade(mark: float):
     elif mark >= 60: return 'D'
     else:            return 'F'
 
-print(get_grade(79.9999))
-print(get_grade(80))
-print(get_grade(91))
-print(get_grade(50))
+for mark in [95,90,89.9,80,79.9,70,65,60,59.5,0]:
+    print(get_grade(mark))
+
+mark = float(input("Enter your mark: "))
+print(f"Your mark of score {mark} is {get_grade(mark)}")
